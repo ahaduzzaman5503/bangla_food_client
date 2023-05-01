@@ -2,15 +2,15 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Header from './Components/Shared/Header/Header'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1 className='text-5xl' >Hello</h1>
-      <h2>Hello</h2>
-      <h3>Hello</h3>
+      <Header></Header>
+
     </>
   )
 }
