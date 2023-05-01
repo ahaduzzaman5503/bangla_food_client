@@ -37,18 +37,18 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">BD Cuisine</a>
+          <a href='/' className="btn btn-ghost normal-case text-xl">BD Cuisine</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>Home</a>
+              <a href='/'>Home</a>
             </li>
             <li>
-              <a>Blog</a>
+              <a href='/blog'>Blog</a>
             </li>
             <li>
-              <a>Chef Recipes</a>
+              <a href='/chefrecipes'>Chef Recipes</a>
             </li>
           </ul>
         </div>

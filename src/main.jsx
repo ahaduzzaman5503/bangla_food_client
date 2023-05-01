@@ -9,6 +9,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import ErrorPage from './Components/pages/Error/ErrorPage.jsx';
+import ChefRecipes from './Components/pages/ChefRecipes/ChefRecipes.jsx';
 
 const router = createBrowserRouter([
   {
@@ -21,8 +22,12 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: '/blogs',
+        path: '/blog',
         element: <Blog></Blog>
+      },
+      {
+        path: '/chefrecipes',
+        element: <ChefRecipes></ChefRecipes>
       }
     ]
   },
