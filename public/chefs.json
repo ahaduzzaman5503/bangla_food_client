@@ -1,0 +1,56 @@
+[
+      {
+        "id": 1,
+        "chef_picture": "https://i.ibb.co/WsN6VN3/chef6.jpg",
+        "chef_name": "Sadia Debnath",
+        "likes": 1200,
+        "years_of_experience": 12,
+        "num_recipes": 50,
+        "bio": "Award-winning chef and owner of multiple restaurants in Dhaka."
+      },
+      {
+        "id": 2,
+        "chef_picture": "https://i.ibb.co/f47fHXY/chef5.jpg",
+        "chef_name": "Aisha Chowdhury",
+        "likes": 800,
+        "years_of_experience": 18,
+        "num_recipes": 80,
+        "bio": "Celebrity chef known for his fusion of traditional Bangladeshi cuisine with international flavors."
+      },
+      {
+        "id": 3,
+        "chef_picture": "https://i.ibb.co/y5MTBRG/chef4.jpg",
+        "chef_name": "Farhana Ahmed",
+        "likes": 600,
+        "years_of_experience": 8,
+        "num_recipes": 30,
+        "bio": "Chef and food blogger who specializes in creating healthy and flavorful Bangladeshi dishes."
+      },
+      {
+        "id": 4,
+        "chef_picture": "https://i.ibb.co/6YcmL4p/chef3.jpg",
+        "chef_name": "Nurul Islam",
+        "likes": 500,
+        "years_of_experience": 15,
+        "num_recipes": 60,
+        "bio": "Expert in traditional Bangladeshi dishes, with a focus on using fresh, locally sourced ingredients."
+      },
+      {
+        "id": 5,
+        "chef_picture": "https://i.ibb.co/k4BfxgQ/chef2.jpg",
+        "chef_name": "Sakib Rahman",
+        "likes": 400,
+        "years_of_experience": 6,
+        "num_recipes": 25,
+        "bio": "Young chef with a passion for experimenting with new and innovative flavors."
+      },
+      {
+        "id": 6,
+        "chef_picture": "https://i.ibb.co/dMvSD6m/chef1.jpg",
+        "chef_name": "Abdul Hamid",
+        "likes": 300,
+        "years_of_experience": 10,
+        "num_recipes": 40,
+        "bio": "Renowned chef and cookbook author, known for her authentic Bangladeshi recipes."
+      }
+] 

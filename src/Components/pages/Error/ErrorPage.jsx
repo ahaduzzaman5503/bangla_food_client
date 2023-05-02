@@ -1,9 +1,12 @@
 import React from "react";
 import notfound from '../../../../public/Assets/404-error.jpg'
+import Header from "../../Shared/Header/Header";
+import Footer from "../../Shared/Footer/Footer";
 
 const ErrorPage = () => {
   return (
-    <div>
+    <div className="container mx-auto">
+      <Header></Header>
       <main class="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
         <div class="text-center">
             <img className="w-96" src={notfound} alt="" />
@@ -27,6 +30,7 @@ const ErrorPage = () => {
           </div>
         </div>
       </main>
+      <Footer></Footer>
     </div>
   );
 };

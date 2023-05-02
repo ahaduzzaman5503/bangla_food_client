@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import ErrorPage from './Components/pages/Error/ErrorPage.jsx';
 import ChefRecipes from './Components/pages/ChefRecipes/ChefRecipes.jsx';
+import Login from './Components/InOutAuth/Login/Login.jsx';
 
 const router = createBrowserRouter([
   {
@@ -20,14 +21,20 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
+        loader: () => fetch("http://localhost:5000/chefs")
       },
       {
         path: '/blog',
         element: <Blog></Blog>
       },
       {
-        path: '/chefrecipes',
-        element: <ChefRecipes></ChefRecipes>
+        path: '/chefrecipes/:id',
+        element: <ChefRecipes></ChefRecipes>,
+        loader: ({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
       }
     ]
   },
