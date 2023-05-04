@@ -38,7 +38,7 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <a href='/' className="btn btn-ghost normal-case text-xl">BD Cuisine</a>
+          <a href='/' className="btn btn-ghost normal-case text-xl">Bangla Food</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -57,6 +57,7 @@ const Header = () => {
         <div className="navbar-end">
           <ul className="menu menu-horizontal px-1">
             <li>
+            
               <a href="/login">Login</a>
             </li>
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
