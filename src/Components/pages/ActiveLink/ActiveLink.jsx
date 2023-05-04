@@ -11,7 +11,6 @@ const ActiveLink = ({to, children}) => {
       >
         {children}
       </NavLink>
-      Blog
     </div>
   );
 };

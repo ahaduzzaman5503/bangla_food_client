@@ -4,14 +4,18 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './Components/Shared/Header/Header'
 import Footer from './Components/Shared/Footer/Footer'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigation } from 'react-router-dom'
 
 function App() {
   const [count, setCount] = useState(0)
+  const navigation = useNavigation();
 
   return (
     <>
       <Header></Header>
+      <div
+      className='container mx-auto text-center'
+      >{navigation.state === 'loading' ? 'loading...' : ''}</div>
       <Outlet></Outlet>
       <Footer></Footer>
     </>

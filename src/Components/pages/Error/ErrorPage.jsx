@@ -6,7 +6,7 @@ import Footer from "../../Shared/Footer/Footer";
 const ErrorPage = () => {
   return (
     <div className="container mx-auto">
-      <Header></Header>
+       
       <main className="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
         <div className="text-center">
             <img className="w-96" src={notfound} alt="" />
@@ -30,7 +30,7 @@ const ErrorPage = () => {
           </div>
         </div>
       </main>
-      <Footer></Footer>
+ 
     </div>
   );
 };
