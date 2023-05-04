@@ -12,6 +12,7 @@ import ErrorPage from './Components/pages/Error/ErrorPage.jsx';
 import ChefRecipes from './Components/pages/ChefRecipes/ChefRecipes.jsx';
 import Login from './Components/InOutAuth/Login/Login.jsx';
 import Register from './Components/InOutAuth/Register/Register.jsx';
+import About from './Components/pages/About/About.jsx';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: '/blog',
         element: <Blog></Blog>
+      },
+      {
+        path: '/about',
+        element: <About></About>
       },
       {
         path: '/chefrecipes/:id',

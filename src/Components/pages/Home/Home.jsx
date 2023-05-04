@@ -29,7 +29,7 @@ Recipes are written in Ruby and contain information about everything needed to b
           </div>
         </div>
       </div>
-<h1>Hello: {chefs.length}</h1>
+
       {/* Chef section */}
       <section className="bg-base-300 py-10">
         <h1 className="text-3xl font-bold text-center py-3"> All BD Chefs </h1>

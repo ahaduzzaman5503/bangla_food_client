@@ -1,9 +1,16 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import './ChefRecipes.css'
+import {  AiOutlineHeart } from "react-icons/ai";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ChefRecipes = () => {
   const chefSD = useLoaderData();
+
+  const saveHandle = () => {
+    toast("This recipe added your favorite list")
+  }
   return (
     <div className="container mx-auto">
       <div className="p-5">
@@ -34,10 +41,13 @@ const ChefRecipes = () => {
               <h3 className="text-xl text-black font-semibold mb-3">
              Descriptions: {chefSD.bio}
               </h3>
-            <button className="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-2 px-5 rounded-lg font-semibold mt-5 hover:text-yellow-300 duration-300 text-center text-xl">
-              View Details
+              <div>
+            <button className="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-2 px-5 rounded-lg font-semibold mt-5 hover:text-yellow-300 duration-300 text-center text-xl"
+            onClick={saveHandle}>
+              <AiOutlineHeart />
             </button>
-
+              <ToastContainer />
+              </div>
             </div>
           </div>
 
