@@ -11,6 +11,7 @@ import {
 import ErrorPage from './Components/pages/Error/ErrorPage.jsx';
 import ChefRecipes from './Components/pages/ChefRecipes/ChefRecipes.jsx';
 import Login from './Components/InOutAuth/Login/Login.jsx';
+import Register from './Components/InOutAuth/Register/Register.jsx';
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/chefs")
+        loader: () => fetch("https://bd-cuisine-server-ahaduzzaman5503.vercel.app/chefs")
       },
       {
         path: '/blog',
@@ -30,11 +31,15 @@ const router = createBrowserRouter([
       {
         path: '/chefrecipes/:id',
         element: <ChefRecipes></ChefRecipes>,
-        loader: ({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
+        loader: ({params}) => fetch(`https://bd-cuisine-server-ahaduzzaman5503.vercel.app/chefs/${params.id}`)
       },
       {
         path: '/login',
         element: <Login></Login>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
       }
     ]
   },
