@@ -44,6 +44,30 @@ Recipes are written in Ruby and contain information about everything needed to b
 
         </div>
       </section>
+
+      <section>
+        <div className="container mx-auto">
+        <h1 className="text-3xl font-bold text-center py-3"> About Us </h1>
+        <div className="grid md:grid-cols-4  gap-8 items-center mt-4 px-2 w-12/12 mx-auto">
+            <div className="bg-yellow-500 p-5 rounded text-white" >
+              <p>557</p>
+              <p>Customer</p>
+            </div>
+            <div className="bg-yellow-500 p-5 rounded text-white">
+              <p>56</p>
+              <p>Reviews</p>
+            </div>
+            <div className="bg-yellow-500 p-5 rounded text-white">
+              <p>78</p>
+              <p>RECEPIES</p>
+            </div>
+            <div className="bg-yellow-500 p-5 rounded text-white">
+              <p>11</p>
+              <p>LOCATIONS</p>
+            </div>
+        </div>
+        </div>
+      </section>
     </div>
   );
 };

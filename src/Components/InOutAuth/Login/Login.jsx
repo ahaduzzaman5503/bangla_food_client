@@ -7,11 +7,14 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import app from "../../../firebase/firebase.init";
+import {useNavigate} from 'react-router-dom'
 
 const Login = () => {
   const [user, setUser] = useState(null);
   const [error, setError] = useState("");
   const [seccess, setSuccess] = useState("");
+
+  const navigate = useNavigate()
 
   const auth = getAuth(app);
   const GoogleProvider = new GoogleAuthProvider();
@@ -41,6 +44,7 @@ const Login = () => {
         setError("");
         event.target.reset();
         setSuccess("User has Created Successfully");
+        navigate('/')
       })
       .catch((error) => {
         setError(error.message);
