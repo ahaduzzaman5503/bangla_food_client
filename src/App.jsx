@@ -14,7 +14,7 @@ function App() {
       <Header></Header>
       <div
       className='container mx-auto'
-      >{navigation.state === 'loading' ? <ColorRing></ColorRing> : ''}</div>
+      >{navigation.state === 'loading' ? <div className='flex items-center justify-center'> <ColorRing></ColorRing> </div> : ''}</div>
       <Outlet></Outlet>
       <Footer></Footer>
     </>

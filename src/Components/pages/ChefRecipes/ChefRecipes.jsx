@@ -7,12 +7,13 @@ import "react-toastify/dist/ReactToastify.css";
 
 const ChefRecipes = () => {
   const chefSD = useLoaderData();
-  const [buttonClicked, setButtonClicked] = useState(false);
+  const [savedIndexes, setSavedIndexes] = useState([]);
 
-  const saveHandle = () => {
+  const saveHandle = (index) => {
     toast("This recipe added your favorite list");
-    setButtonClicked(true);
+    setSavedIndexes((prevState) => [...prevState, index]);
   };
+
   return (
     <div className="container mx-auto">
       <div className="p-5">
@@ -52,8 +53,11 @@ const ChefRecipes = () => {
         <div className="divider"></div>
 
         <div className="mb-5 grid md:grid-cols-2 p-3 gap-5">
-          {chefSD.recepi.map((reci) => (
-            <div className="card card-compact w-96 bg-base-100 shadow-xl">
+          {chefSD.recepi.map((reci, index) => (
+            <div
+              className="card card-compact w-96 bg-base-100 shadow-xl"
+              key={index}
+            >
               <figure>
                 <img src={reci.recepe_picture} alt="Shoes" />
               </figure>
@@ -62,12 +66,16 @@ const ChefRecipes = () => {
                 <p> {reci.recepe_bio} </p>
                 <div>
                   <button
-                    className="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-2 px-5 rounded-lg font-semibold mt-5 hover:text-yellow-300 duration-300 text-center text-xl"
-                    onClick={saveHandle}
-                    disabled={buttonClicked}
+                    className={`bg-gradient-to-r from-purple-600 to-blue-600 text-white py-2 px-5 rounded-lg font-semibold mt-5 hover:text-yellow-300 duration-300 text-center text-xl ${
+                      savedIndexes.includes(index) &&
+                      "opacity-50 cursor-not-allowed"
+                    }`}
+                    onClick={() => saveHandle(index)}
+                    disabled={savedIndexes.includes(index)}
                   >
                     <AiOutlineHeart />
                   </button>
+
                   <ToastContainer />
                 </div>
               </div>

@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
 import { AuthContex } from './AuthProvider';
 import { Navigate, useLocation } from 'react-router-dom';
+import { ColorRing } from 'react-loader-spinner';
 
 const PrivateRoute = ({children}) => {
     const location = useLocation()
     const {user, loading} = useContext(AuthContex);
     if(loading){
-        return <div>loading...</div>
+        return <div className='flex items-center justify-center'><ColorRing></ColorRing></div>
     }
     if(user ){
         return children;
