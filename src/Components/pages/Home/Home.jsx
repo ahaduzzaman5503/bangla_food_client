@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import man from "../../../../public/Assets/home_03_01.jpg";
 import { useState } from "react";
 import ChefShow from "../ChefShow/ChefShow";
 import { useLoaderData } from "react-router-dom";
@@ -10,12 +9,17 @@ const Home = () => {
   return (
     <div className="container mx-auto">
       {/* banner section */}
-      <div>
-        <div className="hero min-h-screen bg-base-200">
-          <div className="hero-content flex-col lg:flex-row-reverse">
-            <img src={man} className="max-w-sm rounded-lg shadow-2xl" />
-            <div className="p-10">
-              <h1 className="text-4xl font-bold">Chef Recipes</h1>
+
+      <div
+        className="hero min-h-screen"
+        style={{
+          backgroundImage: `url("https://www.chefspencil.com/wp-content/uploads/20-Popular-Culinary-Delights-from-Bengal-1.jpg.webp")`,
+        }}
+      >
+        <div className="hero-overlay bg-opacity-60"></div>
+        <div className="hero-content text-center text-neutral-content">
+          <div className="max-w-md">
+          <h1 className="text-4xl font-bold">Chef Recipes</h1>
               <h3 className="text-3xl font-bold text-yellow-500 mt-4">
                 Bring Out Your Inner Chef.
               </h3>
@@ -29,7 +33,6 @@ const Home = () => {
               <button className="btn btn-primary">
                 <a href="/blog">View Blog</a>
               </button>
-            </div>
           </div>
         </div>
       </div>
@@ -72,8 +75,11 @@ const Home = () => {
 
       {/* -------------------------Extra Section two------------------- */}
       <section className="mb-10">
-        <h1 className="text-3xl font-bold text-center mt-5 py-5"> Reservation </h1>
-        <div className="divider"></div> 
+        <h1 className="text-3xl font-bold text-center mt-5 py-5">
+          {" "}
+          Reservation{" "}
+        </h1>
+        <div className="divider"></div>
 
         <div className="grid md:grid-cols-3  gap-8 items-center mt-4 px-2 w-12/12 mx-auto">
           <div className="bg-white border">

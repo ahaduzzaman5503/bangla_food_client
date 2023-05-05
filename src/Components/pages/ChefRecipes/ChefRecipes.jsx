@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import "./ChefRecipes.css";
 import { AiOutlineHeart } from "react-icons/ai";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -21,13 +20,14 @@ const ChefRecipes = () => {
           <h1 className="text-5xl text-center"> Details</h1>
         </div>
 
-        <div className="details">
-          <div className="bg-gray-500 p-2 justify-center shadow-2xl rounded-lg mb-5 flex items-center">
-            <img
-              className="w-56 h-auto mb-3 rounded-lg shadow-2xl"
-              src={chefSD.chef_picture}
-            />
-          </div>
+        <div className="details hero-content flex-col lg:flex-row ">
+
+            <div className="avatar">
+              <div className="w-60 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                <img src={chefSD.chef_picture} />
+              </div>
+            </div>
+          
 
           <div className=" p-4 rounded-lg mb-5">
             <div className="bg-gray-50 text-start rounded-lg shadow-lg p-5 ">
@@ -64,6 +64,13 @@ const ChefRecipes = () => {
               <div className="card-body">
                 <h2 className="card-title">{reci.recepe_name}</h2>
                 <p> {reci.recepe_bio} </p>
+                <div className="divider"></div>
+                <h2 className="card-title">Ingredients: {reci.ingredients}</h2>
+
+                <h2 className="card-title">
+                  Cooking Method: {reci.cooking_method}
+                </h2>
+                <h2 className="card-title">Rating: {reci.rating}</h2>
                 <div>
                   <button
                     className={`bg-gradient-to-r from-purple-600 to-blue-600 text-white py-2 px-5 rounded-lg font-semibold mt-5 hover:text-yellow-300 duration-300 text-center text-xl ${
