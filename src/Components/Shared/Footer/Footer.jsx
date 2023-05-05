@@ -2,14 +2,22 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className=" container mx-auto footer footer-center p-10 bg-base-200 text-base-content rounded">
-      <div className="grid grid-flow-col gap-4">
-        <a className="link link-hover">Home</a>
-        <a className="link link-hover">About us</a>
-        <a className="link link-hover">Contact</a>
-        <a className="link link-hover">Blog</a>
+    <div>
+    <footer className="footer p-10 bg-white-500 text-base-content ">
+      <div>
+        <span className="footer-title">Services</span>
+        <a className="link link-hover">Recipies</a>
+        <a className="link link-hover">Bangla Food</a>
+        <a className="link link-hover">Flaver Food</a>
       </div>
       <div>
+        <span className="footer-title">Company</span>
+        <a className="link link-hover">About us</a>
+        <a className="link link-hover">Contact</a>
+        <a className="link link-hover">Jobs</a>
+      </div>
+      <div>
+        <span className="footer-title">Social</span>
         <div className="grid grid-flow-col gap-4">
           <a>
             <svg
@@ -46,10 +54,11 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <div>
-        <p>Copyright © 2023 - All right reserved by BD Cuisine</p>
-      </div>
     </footer>
+    <div className="flex items-center justify-center py-5 mb-5">
+    <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
+  </div>
+    </div>
   );
 };
 

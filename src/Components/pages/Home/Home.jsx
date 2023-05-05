@@ -45,6 +45,7 @@ const Home = () => {
         </div>
       </section>
 
+      {/* -------------------------Extra Section One------------------- */}
       <section>
         <div className="container mx-auto">
           <h1 className="text-3xl font-bold text-center py-3"> About Us </h1>
@@ -65,6 +66,110 @@ const Home = () => {
               <p>11</p>
               <p>LOCATIONS</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* -------------------------Extra Section two------------------- */}
+      <section className="mb-10">
+        <h1 className="text-3xl font-bold text-center mt-5 py-5"> Reservation </h1>
+        <div className="divider"></div> 
+
+        <div className="grid md:grid-cols-3  gap-8 items-center mt-4 px-2 w-12/12 mx-auto">
+          <div className="bg-white border">
+            <img
+              src="https://www.chefspencil.com/wp-content/uploads/Kala-Bhuna-960x960.jpg.webp"
+              className="max-w-sm rounded-lg shadow-2xl"
+            />
+          </div>
+          <div className=" ">
+            <div className="hero-content flex-col ">
+              <div className="text-center lg:text-left">
+                <h1 className="text-3xl font-bold">BOOK YOUR TABLE</h1>
+              </div>
+              <div className="card bg-blue-300 text-black flex-shrink-0 w-full max-w-sm shadow-2xl ">
+                <div className="card-body">
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text text-black font-bold text-2xl">
+                        Name
+                      </span>
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      placeholder="name"
+                      className="input input-bordered"
+                    />
+                  </div>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text text-black font-bold text-2xl">
+                        Email
+                      </span>
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="email"
+                      className="input input-bordered"
+                    />
+                  </div>
+
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text text-black font-bold text-2xl">
+                        Date
+                      </span>
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      placeholder="17/09/2016"
+                      className="input input-bordered"
+                    />
+                  </div>
+
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text text-black font-bold text-2xl">
+                        Time
+                      </span>
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      placeholder="10:30 PM"
+                      className="input input-bordered"
+                    />
+                  </div>
+
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text text-black font-bold text-2xl">
+                        People
+                      </span>
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      placeholder="13 People"
+                      className="input input-bordered"
+                    />
+                  </div>
+
+                  <div className="form-control mt-6">
+                    <button className="btn btn-primary">Find A Table</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white border">
+            <img
+              src="https://www.chefspencil.com/wp-content/uploads/Falooda-1-960x960.jpg.webp"
+              className="max-w-sm rounded-lg shadow-2xl"
+            />
           </div>
         </div>
       </section>
