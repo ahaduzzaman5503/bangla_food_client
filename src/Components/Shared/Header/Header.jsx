@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import ActiveLink from "../../pages/ActiveLink/ActiveLink";
+import { space } from "postcss/lib/list";
+import { AuthContex } from "../../../Providers/AuthProvider";
+import { Link } from "react-router-dom";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContex);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
+
   return (
     <div className="container mx-auto">
       <div className="navbar bg-base-100">
@@ -27,44 +38,60 @@ const Header = () => {
               tabIndex={0}
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
+              {/* mobile */}
               <li>
-                <a>Home</a>
+                <ActiveLink to="/">Home</ActiveLink>
               </li>
               <li>
-                <a>Blog</a>
+                <ActiveLink to="/blog">Blog</ActiveLink>
               </li>
               <li>
-                <a>About</a>
+                <ActiveLink to="/about">About</ActiveLink>
               </li>
             </ul>
           </div>
-          <a href='/' className="btn btn-ghost normal-case text-xl">Bangla Food</a>
+          <a href="/" className="btn btn-ghost normal-case text-xl">
+            Bangla Food
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <ActiveLink to='/'>Home</ActiveLink>
+              <ActiveLink to="/">Home</ActiveLink>
             </li>
             <li>
-              <ActiveLink to='/blog'>Blog</ActiveLink>
+              <ActiveLink to="/blog">Blog</ActiveLink>
             </li>
             <li>
-              <ActiveLink to='/about'>About</ActiveLink>
+              <ActiveLink to="/about">About</ActiveLink>
             </li>
           </ul>
         </div>
 
         <div className="navbar-end">
           <ul className="menu menu-horizontal px-1">
-            <li>
-            
-              <a href="/login">Login</a>
-            </li>
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full">
-                <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1682967364~exp=1682967964~hmac=e2f24cf0bd7b6ded9503d95267a15ca61d5820b7eb24c71f7c7fa8a52c0a1d36" />
+            {/* <li>
+              <a href="/register">Register</a>
+            </li> */}
+
+            {user ? (
+              <div className="flex items-center justify-center gap-5">
+                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                  <div title={user.displayName} className="w-10 rounded-full">
+                    {user?.photoURL &&  <img src={user?.photoURL} alt="pic" /> }
+                  </div>
+                </label>
+                <button onClick={handleLogOut} className="btn btn-primary">
+                  SignOut
+                </button>
               </div>
-            </label>
+            ) : (
+              <li>
+                <button   className="btn btn-primary">
+                <a href="/login">login</a>
+                </button>
+              </li>
+            )}
           </ul>
         </div>
       </div>

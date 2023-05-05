@@ -13,6 +13,8 @@ import ChefRecipes from './Components/pages/ChefRecipes/ChefRecipes.jsx';
 import Login from './Components/InOutAuth/Login/Login.jsx';
 import Register from './Components/InOutAuth/Register/Register.jsx';
 import About from './Components/pages/About/About.jsx';
+import AuthProvider from './Providers/AuthProvider.jsx';
+import PrivateRoute from './Providers/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -35,7 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/chefrecipes/:id',
-        element: <ChefRecipes></ChefRecipes>,
+        element: <PrivateRoute><ChefRecipes></ChefRecipes></PrivateRoute>,
         loader: ({params}) => fetch(`https://bd-cuisine-server-ahaduzzaman5503.vercel.app/chefs/${params.id}`)
       },
       {
@@ -56,6 +58,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )

@@ -1,8 +1,15 @@
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContex } from '../../../Providers/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
-    const [user, setUser] = useState(null)
+
+  const {user, createUser} = useContext(AuthContex);
+  console.log(user, createUser);
+  const navigate = useNavigate()
+
+    // const [user, setUser] = useState(null)
     const [error, setError] = useState('')
     const [seccess, setSuccess] = useState('')
 
@@ -12,22 +19,31 @@ const Register = () => {
       const handlePasswordBlur = (event) => {
         // console.log(event.target.value);
       }
+      const handlePhotoUrl = (event) => {
+        console.log(event.target.value);
+      }
 
-    const handleSubmit = (event) => {
+    const handleRegister = (event) => {
         event.preventDefault();
+         const name = event.target.name.value;
          const email = event.target.email.value;
          const password = event.target.password.value;
-         console.log(email, password);
+         const photourl = event.target.photourl.value;
     
-         createUserWithEmailAndPassword(auth, email, password)
+         console.log(name, email, password, photourl);
+
+         createUser(email, password)
          .then(result => {
           const EPUser = result.user;
+          updateProfile(EPUser, {
+            displayName: name, photoURL: photourl 
+          })
           console.log(EPUser);
-          setUser(EPUser);
+          // setUser(EPUser);
           setError('');
           event.target.reset();
           setSuccess('User has Created Successfully')
-    
+          navigate('/login')
         } )
         .catch(error => {
           setError(error.message);
@@ -35,37 +51,14 @@ const Register = () => {
         })
       }
 
-      const handleGoogleSignIn = () => {
-        signInWithPopup(auth, GoogleProvider)
-        .then(result => {
-          const googleUser = result.user;
-          console.log(googleUser);
-          setUser(googleUser);
-        } )
-        .catch(error => {
-          console.log('error', error.message);
-        })
-      }
-    /*--- ----------Google Login----------------*/
-      const handleGitHubSignIn = () => {
-        signInWithPopup(auth, GitHubProvider)
-        .then(result => {
-          const GithubUser = result.user;
-          console.log(GithubUser);
-          setUser(GithubUser);
-        })
-        .catch(error => {
-          console.log('error', error.message);
-        })
-      }
 
     return (
         <div className="container mx-auto">
         <div className="hero min-h-screen bg-base-200">
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                 <div className='text-center text-2xl font-bold mt-3'>Please Register</div>
-              <div className="card-body">
-                <form  onSubmit={handleSubmit} >
+              <form onSubmit={handleRegister} className="card-body">
+            
   {/* --- ----------Name Field---------------- */}
   <div className="form-control">
                   <label className="label">
@@ -114,31 +107,38 @@ const Register = () => {
                     </a>
                   </label>
                 </div>
+
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text font-bold text-xl">Photo Url</span>
+                  </label>
+                  <input
+                    onChange={handlePhotoUrl}
+                    type="text"
+                    placeholder="photo url"
+                    className="input input-bordered"
+                    id="photourl"
+                    required
+                  />
+                </div>
+
+
                 <div className="form-control mt-6">
                   <button className="btn btn-primary">Register</button>
                 </div>
-                  <div className="text-center font-bold text-lg text-green-500 " >OR</div>
-                <div className="form-control ">
-                  <button className="btn btn-primary"> <a href="/login">login</a></button>
-                </div>
-                </form>
+
                   <p className="text-red-500 text-center">{error}</p>
                   <p className="text-green-400 text-center">{seccess}</p>
   
-                <div className="divider m-0 p-0"></div> 
-  
-              </div>
-                <div className="form-control px-5">
-                  <button className="btn btn-success"
-                  onClick={handleGoogleSignIn}>
-                    Continue With Google
-                    </button>
+              </form>
+
+              <div className='flex items-center gap-2 text-center mx-10'>
+                  <h1>Already have an Accaunt?</h1>
+                  <button className='btn btn-secondary'>
+                    <Link to="/login">login</Link> 
+                  </button>
                 </div>
-                <div className="form-control my-2 px-5">
-                  <button className="btn btn-success"
-                  onClick={handleGitHubSignIn}
-                  >Continue With GitHub</button>
-                </div>
+
             </div>
           </div>
         </div>
